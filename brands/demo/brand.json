@@ -1,0 +1,128 @@
+{
+  "id": "demo",
+  "name": "Rang Paridhan",
+  "languages": ["hi", "en"],
+  "geography": ["Uttar Pradesh", "Delhi", "Rajasthan", "Madhya Pradesh"],
+  "domain": "rangparidhan.in",
+  "identity": {
+    "palette": [
+      { "name": "burgundy",      "hex": "#7A1F2B", "role": "primary"    },
+      { "name": "deep_burgundy", "hex": "#4D1219", "role": "secondary"  },
+      { "name": "cream",         "hex": "#F5EDD6", "role": "background" },
+      { "name": "warm_cream",    "hex": "#EDE3C8", "role": "secondary"  },
+      { "name": "gold",          "hex": "#C9A84C", "role": "accent"     }
+    ],
+    "fonts": {
+      "heading": "NotoSansDevanagari-SemiBold",
+      "body":    "NotoSans-Regular",
+      "accent":  "NotoSans-Bold"
+    },
+    "logo_assets": {
+      "svg": "brands/demo/assets/logo.svg",
+      "png": "brands/demo/assets/logo.png"
+    }
+  },
+  "voice": {
+    "tone_words": ["warm", "artisanal", "rooted", "proud", "festive"],
+    "never_say": ["cheap", "discount store", "low quality", "foreign brand"],
+    "examples": [
+      "हर धागे में बसी है हमारी मिट्टी की खुशबू। रंग परिधान — पहनावे में परंपरा।",
+      "This Diwali, dress in stories woven from the heart of Lucknow. Rang Paridhan.",
+      "चिकनकारी का हुनर, पीढ़ियों की विरासत — आज आपके लिए।"
+    ]
+  },
+  "usps": [
+    "Hand-embroidered chikankari by Lucknow artisans",
+    "100% natural fabrics — cotton, khadi, silk",
+    "Each piece numbered; limited runs",
+    "Free shipping above ₹999; 7-day hassle-free returns",
+    "Worn at Dilli Haat and Crafts Bazaar 2025"
+  ],
+  "products": [
+    {
+      "sku": "KRT-001",
+      "name_ml": {
+        "hi": "चिकनकारी सिल्क कुर्ता",
+        "en": "Chikankari Silk Kurta"
+      },
+      "description_ml": {
+        "hi": "लखनवी चिकनकारी से सजा शुद्ध सिल्क कुर्ता, विशेष अवसरों के लिए।",
+        "en": "Pure silk kurta adorned with Lucknowi chikankari embroidery, crafted for special occasions."
+      },
+      "price": 2499,
+      "currency": "INR",
+      "stock_state": "IN_STOCK",
+      "margin_tier": "high",
+      "category": "silk_kurta",
+      "images": ["brands/demo/products/KRT-001_cutout.png"]
+    },
+    {
+      "sku": "KRT-002",
+      "name_ml": {
+        "hi": "ब्लॉक प्रिंट कॉटन कुर्ता",
+        "en": "Block Print Cotton Kurta"
+      },
+      "description_ml": {
+        "hi": "राजस्थानी ब्लॉक प्रिंट के साथ हल्का कॉटन कुर्ता, रोज़मर्रा के लिए आदर्श।",
+        "en": "Lightweight cotton kurta with Rajasthani block print — ideal for everyday wear."
+      },
+      "price": 1299,
+      "currency": "INR",
+      "stock_state": "IN_STOCK",
+      "margin_tier": "medium",
+      "category": "cotton_kurta",
+      "images": ["brands/demo/products/KRT-002_cutout.png"]
+    },
+    {
+      "sku": "KRT-003",
+      "name_ml": {
+        "hi": "कढ़ाई नेहरू कॉलर कुर्ता",
+        "en": "Embroidered Nehru Collar Kurta"
+      },
+      "description_ml": {
+        "hi": "नेहरू कॉलर और बारीक कढ़ाई वाला क्लासिक कुर्ता, मीटिंग से लेकर उत्सव तक।",
+        "en": "Classic Nehru collar kurta with fine thread embroidery — from boardroom to baraati."
+      },
+      "price": 1799,
+      "currency": "INR",
+      "stock_state": "IN_STOCK",
+      "margin_tier": "high",
+      "category": "nehru_kurta",
+      "images": ["brands/demo/products/KRT-003_cutout.png"]
+    },
+    {
+      "sku": "KRT-004",
+      "name_ml": {
+        "hi": "उत्सव ब्रोकेड कुर्ता सेट",
+        "en": "Festive Brocade Kurta Set"
+      },
+      "description_ml": {
+        "hi": "बनारसी ब्रोकेड का भव्य कुर्ता और पजामा सेट, त्योहारों की रौनक के लिए।",
+        "en": "Grand Banarasi brocade kurta-pyjama set — made for the glow of every festival."
+      },
+      "price": 3299,
+      "currency": "INR",
+      "stock_state": "LOW_STOCK",
+      "margin_tier": "high",
+      "category": "festive_set",
+      "images": ["brands/demo/products/KRT-004_cutout.png"]
+    },
+    {
+      "sku": "KRT-005",
+      "name_ml": {
+        "hi": "खादी कुर्ता",
+        "en": "Casual Khadi Kurta"
+      },
+      "description_ml": {
+        "hi": "हाथ से बुनी खादी का सादा और आरामदायक कुर्ता, स्वदेशी का गर्व पहनें।",
+        "en": "Hand-spun khadi kurta — simple, breathable, and proudly swadeshi."
+      },
+      "price": 899,
+      "currency": "INR",
+      "stock_state": "IN_STOCK",
+      "margin_tier": "low",
+      "category": "khadi_kurta",
+      "images": ["brands/demo/products/KRT-005_cutout.png"]
+    }
+  ]
+}
