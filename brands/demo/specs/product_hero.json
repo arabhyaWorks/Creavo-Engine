@@ -1,0 +1,73 @@
+{
+  "spec_version": "demo.product_hero.v1",
+  "archetype_id": "product_hero",
+  "dimensions": { "w": 1080, "h": 1350, "platform": "ig_feed_portrait" },
+  "locked": ["logo"],
+  "layers": [
+    {
+      "id": "product",
+      "type": "image",
+      "role": "subject",
+      "source": "catalog",
+      "sku": "KRT-001",
+      "asset_ref": "brands/demo/products/KRT-001_cutout.svg"
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "source": "brand_asset",
+      "asset_ref": "brands/demo/assets/logo_light.svg",
+      "anchor": "bottom_right",
+      "margin_px": 52,
+      "max_h_px": 72
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "text": "चिकनकारी सिल्क कुर्ता",
+      "lang": "hi",
+      "font": "NotoSansDevanagari",
+      "size_px": 84,
+      "color": "#F5EDD6"
+    },
+    {
+      "id": "subheadline",
+      "type": "text",
+      "text": "Chikankari Silk Kurta",
+      "lang": "en",
+      "font": "NotoSans",
+      "size_px": 34,
+      "color": "#C9A84C"
+    },
+    {
+      "id": "price",
+      "type": "text",
+      "text": "₹2,499",
+      "lang": "en",
+      "font": "NotoSans",
+      "size_px": 50,
+      "color": "#2E0A10",
+      "badge": { "fill": "#C9A84C", "shape": "pill" }
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "text": "अभी खरीदें  •  Shop Now",
+      "lang": "hi",
+      "font": "NotoSansDevanagari",
+      "size_px": 44,
+      "color": "#F5EDD6"
+    }
+  ],
+  "variation_axes": {
+    "archetype": "product_hero",
+    "hook_type": "offer",
+    "text_density": "medium",
+    "language": "hi"
+  },
+  "caption": {
+    "lang": "hi",
+    "text": "लखनवी चिकनकारी का बेमिसाल हुनर — हर धागे में बसी है परंपरा। 🌸\n\nरंग परिधान के चिकनकारी सिल्क कुर्ते में पहनावे का जश्न मनाएं।\nशुद्ध सिल्क • हाथ की कढ़ाई • सीमित संग्रह",
+    "hashtags": ["#RangParidhan", "#Chikankari", "#LucknowCraft", "#DesiKurta", "#HandEmbroidered", "#FestiveWear", "#SilkKurta", "#IndianFashion"]
+  }
+}

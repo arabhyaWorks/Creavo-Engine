@@ -1,0 +1,65 @@
+{
+  "id": "rosier",
+  "name": "Rosier Foods",
+  "tagline": "Nature's Love",
+  "languages": ["en", "hi"],
+  "geography": ["Pan India"],
+  "domain": "rosierfoods.com",
+  "identity": {
+    "palette": [
+      { "name": "golden_yellow", "hex": "#FFD800", "role": "primary" },
+      { "name": "earth_brown",   "hex": "#C89758", "role": "secondary" },
+      { "name": "deep_brown",    "hex": "#3D2000", "role": "dark" },
+      { "name": "off_white",     "hex": "#FAF9F6", "role": "background" },
+      { "name": "warm_cream",    "hex": "#FFF8E7", "role": "light" }
+    ],
+    "fonts": {
+      "heading": "CormorantGaramond-SemiBold",
+      "body":    "NotoSans-Regular",
+      "accent":  "NotoSans-Bold"
+    },
+    "logo_assets": {
+      "dark": "brands/rosier/assets/logo.png",
+      "light": "brands/rosier/assets/logo_light.png"
+    }
+  },
+  "voice": {
+    "tone_words": ["pure", "traditional", "artisanal", "trustworthy", "wholesome"],
+    "never_say": ["cheap", "chemical", "artificial", "commercial"],
+    "examples": [
+      "Made by hand. Made with love. Made the way your grandmother would approve.",
+      "Every drop tells a story — of Gir cows, open fields, and the ancient Bilona tradition.",
+      "Pure A2 Ghee, cold-pressed by farmers of Gujarat. Nature's most complete food."
+    ]
+  },
+  "usps": [
+    "Made from 100% Gir Cow A2 milk",
+    "Traditional Bilona churning method",
+    "Free-grazing cows, no hormones",
+    "Naturally rich in CLA & Omega-3",
+    "Small-batch, farm-to-jar"
+  ],
+  "products": [
+    {
+      "sku": "GHE-001",
+      "name_ml": {
+        "en": "Gir Cow A2 Bilona Ghee",
+        "hi": "गिर गाय A2 बिलोना घी"
+      },
+      "description_ml": {
+        "en": "Pure A2 ghee made from Gir cow curd, churned using the traditional Bilona method. Rich, aromatic, and deeply nourishing.",
+        "hi": "गिर गाय के दूध से बनी दही को पारंपरिक बिलोना विधि से मथकर बनाया गया शुद्ध A2 घी।"
+      },
+      "price": 1350,
+      "currency": "INR",
+      "stock_state": "IN_STOCK",
+      "margin_tier": "high",
+      "category": "ghee",
+      "rating": 4.9,
+      "review_count": 1017,
+      "images": ["brands/rosier/products/GHE-001_cutout.jpg"],
+      "key_claim": "Made from Curd · Bilona Method",
+      "size": "500 ml"
+    }
+  ]
+}

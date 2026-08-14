@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "description": "Creative generation core for Creavo — brand kit in, Instagram-ready PNG out",
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "generate": "tsx src/cli.ts",
+    "render": "tsx src/render.ts",
+    "generate-a": "tsx --env-file=.env src/generate-a.ts",
+    "generate-hybrid": "tsx --env-file=.env src/generate-hybrid.ts",
+    "generate-compose": "tsx --env-file=.env src/generate-compose.ts",
+    "generate-full-ai": "tsx --env-file=.env src/generate-full-ai.ts",
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/noto-sans": "^5.2.10",
+    "@fontsource/noto-sans-devanagari": "^5.2.8",
+    "@fontsource/rozha-one": "^5.2.7",
     "sharp": "^0.33.5"
   },
   "devDependencies": {

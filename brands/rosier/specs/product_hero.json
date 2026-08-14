@@ -1,0 +1,81 @@
+{
+  "spec_version": "rosier.product_hero.v1",
+  "archetype_id": "product_hero_golden",
+  "dimensions": { "w": 1080, "h": 1350, "platform": "ig_feed_portrait" },
+  "locked": ["logo"],
+  "layers": [
+    {
+      "id": "product",
+      "type": "image",
+      "role": "subject",
+      "source": "catalog",
+      "sku": "GHE-001",
+      "asset_ref": "brands/rosier/products/GHE-001_cutout.jpg"
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "source": "brand_asset",
+      "asset_ref": "brands/rosier/assets/logo_light.png",
+      "anchor": "top_right",
+      "margin_px": 52,
+      "max_h_px": 80
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "text": "Gir Cow A2 Bilona Ghee",
+      "lang": "en",
+      "font": "CormorantGaramond",
+      "size_px": 88,
+      "color": "#FAF9F6"
+    },
+    {
+      "id": "claim",
+      "type": "text",
+      "text": "Made from Curd · Traditional Bilona Method",
+      "lang": "en",
+      "font": "NotoSans",
+      "size_px": 30,
+      "color": "#FFD800"
+    },
+    {
+      "id": "rating",
+      "type": "text",
+      "text": "★★★★★  4.9  ·  1,017 Reviews",
+      "lang": "en",
+      "font": "NotoSans",
+      "size_px": 28,
+      "color": "#FAF9F6"
+    },
+    {
+      "id": "price",
+      "type": "text",
+      "text": "₹1,350",
+      "lang": "en",
+      "font": "CormorantGaramond",
+      "size_px": 72,
+      "color": "#FAF9F6"
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "text": "Shop Now",
+      "lang": "en",
+      "font": "NotoSans",
+      "size_px": 34,
+      "color": "#FAF9F6"
+    }
+  ],
+  "variation_axes": {
+    "archetype": "product_hero_golden",
+    "hook_type": "offer",
+    "text_density": "medium",
+    "language": "en"
+  },
+  "caption": {
+    "lang": "en",
+    "text": "Pure. Traditional. Nourishing. 🌿\n\nOur Gir Cow A2 Bilona Ghee is made the way your grandmother would approve — Gir cows, free-grazed on open fields, curd churned overnight with the ancient Bilona method.\n\n500 ml · ₹1,350 · Inclusive of all taxes",
+    "hashtags": ["#RosierFoods", "#A2Ghee", "#GirCowGhee", "#BilonaGhee", "#PureGhee", "#NaturesLove", "#TraditionalFood", "#HealthyLiving"]
+  }
+}

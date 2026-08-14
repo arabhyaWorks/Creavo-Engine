@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+{{FONT_FACE_CSS}}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'NotoSans', sans-serif;
+  background: #3D2000;
+}
+
+/* ── Full-bleed composite plate (scene + product baked in by sharp) ── */
+.plate {
+  position: absolute;
+  inset: 0;
+  width: 1080px;
+  height: 1350px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* ── Top scrim: dark enough for logo + headline ─────── */
+.scrim-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 48%;
+  background: linear-gradient(180deg,
+    rgba(20,8,0,0.88) 0%,
+    rgba(30,12,0,0.72) 18%,
+    rgba(40,16,0,0.45) 36%,
+    rgba(40,16,0,0.15) 52%,
+    transparent 100%);
+  z-index: 1;
+}
+
+/* ── Bottom scrim: dark gradient for price + CTA ────── */
+.scrim-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 42%;
+  background: linear-gradient(0deg,
+    rgba(20,8,0,0.94) 0%,
+    rgba(20,8,0,0.80) 22%,
+    rgba(30,12,0,0.52) 45%,
+    rgba(30,12,0,0.18) 65%,
+    transparent 100%);
+  z-index: 1;
+}
+
+/* ── Hairline gold frame ──────────────────────────── */
+.frame {
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(255,216,0,0.42);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── Film grain overlay ───────────────────────────── */
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="300" height="300" filter="url(%23n)"/></svg>');
+  z-index: 4;
+}
+
+/* ── Logo — top right ─────────────────────────────── */
+.logo {
+  position: absolute;
+  top: 52px;
+  right: 56px;
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* ── Kicker tagline ───────────────────────────────── */
+.kicker {
+  position: absolute;
+  top: 56px;
+  left: 60px;
+  font-family: 'NotoSans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFD800;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ── Main headline ────────────────────────────────── */
+.headline {
+  position: absolute;
+  top: 96px;
+  left: 58px; right: 58px;
+  font-family: 'CormorantGaramond', serif;
+  font-size: 88px;
+  font-weight: 600;
+  color: #FAF9F6;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+/* ── Claim line ───────────────────────────────────── */
+.claim {
+  position: absolute;
+  top: 310px;
+  left: 58px; right: 58px;
+  font-family: 'NotoSans', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #FFD800;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* gold divider under claim */
+.claim::after {
+  content: '';
+  display: block;
+  margin-top: 16px;
+  width: 80px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #FFD800, rgba(255,216,0,0.2));
+}
+
+/* ── Rating badge ─────────────────────────────────── */
+.rating {
+  position: absolute;
+  bottom: 248px;
+  left: 58px;
+  background: rgba(20,8,0,0.55);
+  border: 1px solid rgba(255,216,0,0.5);
+  border-radius: 12px;
+  padding: 10px 22px;
+  font-family: 'NotoSans', sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  color: #FAF9F6;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* ── Price ────────────────────────────────────────── */
+.price-badge {
+  position: absolute;
+  bottom: 230px;
+  right: 58px;
+  text-align: right;
+  z-index: 2;
+}
+
+.price-value {
+  font-family: 'CormorantGaramond', serif;
+  font-size: 82px;
+  font-weight: 600;
+  color: #FAF9F6;
+  line-height: 1;
+  display: block;
+}
+
+.price-incl {
+  font-family: 'NotoSans', sans-serif;
+  font-size: 19px;
+  color: rgba(250,249,246,0.55);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── CTA ──────────────────────────────────────────── */
+.cta-button {
+  position: absolute;
+  bottom: 90px;
+  left: 58px; right: 58px;
+  height: 96px;
+  background: rgba(20,8,0,0.25);
+  border: 1.5px solid rgba(255,216,0,0.9);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NotoSans', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #FAF9F6;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+  <img class="plate" src="{{PLATE_SRC}}" alt="" onerror="this.style.display='none'"/>
+
+  <div class="scrim-top"></div>
+  <div class="scrim-bottom"></div>
+
+  <div class="kicker">Nature's Love</div>
+  <div class="headline">{{HEADLINE}}</div>
+  <div class="claim">{{CLAIM}}</div>
+
+  <div class="rating">{{RATING}}</div>
+
+  <div class="price-badge">
+    <span class="price-value">{{PRICE}}</span>
+    <span class="price-incl">Inclusive of all taxes · 500 ml</span>
+  </div>
+
+  <div class="cta-button">{{CTA}}</div>
+
+  <img class="logo" src="{{LOGO_SRC}}" alt="Rosier Foods" onerror="this.style.display='none'"/>
+
+  <div class="frame"></div>
+  <div class="grain"></div>
+</body>
+</html>

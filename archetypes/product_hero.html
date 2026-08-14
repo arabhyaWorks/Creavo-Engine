@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+{{FONT_FACE_CSS}}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'NotoSans', sans-serif;
+  background:
+    radial-gradient(140% 90% at 50% -10%, #8A2733 0%, #7A1F2B 38%, #5C1620 72%, #44101A 100%);
+}
+
+/* deep vignette for richness */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 110% at 50% 45%, transparent 55%, rgba(20,4,8,0.55) 100%);
+  z-index: 1;
+}
+
+/* ── Film grain ───────────────────────────────────────── */
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="300" height="300" filter="url(%23n)"/></svg>');
+  z-index: 6;
+}
+
+/* ── Hairline gold frame ──────────────────────────────── */
+.frame {
+  position: absolute;
+  inset: 30px;
+  border: 1px solid rgba(201,168,76,0.5);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ── Kicker ───────────────────────────────────────────── */
+.kicker {
+  position: absolute;
+  top: 86px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'NotoSansDevanagari', 'NotoSans', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #C9A84C;
+  letter-spacing: 13px;
+  text-indent: 13px;
+  z-index: 2;
+}
+
+/* ── Headline — Devanagari display serif ──────────────── */
+.headline {
+  position: absolute;
+  top: 124px;
+  left: 70px; right: 70px;
+  text-align: center;
+  font-family: 'RozhaOne', 'NotoSansDevanagari', serif;
+  font-size: 92px;
+  font-weight: 400;
+  color: #F5EDD6;
+  line-height: 1.32;
+  padding-top: 10px; /* Devanagari top matras */
+  text-shadow: 0 2px 20px rgba(20,4,8,0.4);
+  z-index: 2;
+}
+
+/* ── Sub-headline — spaced caps serif ─────────────────── */
+.subheadline {
+  position: absolute;
+  top: 290px;
+  left: 70px; right: 70px;
+  text-align: center;
+  font-family: 'CormorantGaramond', serif;
+  font-size: 31px;
+  font-weight: 600;
+  color: #C9A84C;
+  letter-spacing: 9px;
+  text-indent: 9px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ── Arched photo window (Mughal arch) ────────────────── */
+.arch-outer {
+  position: absolute;
+  top: 368px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 748px;
+  height: 678px;
+  border: 1px solid rgba(201,168,76,0.55);
+  border-radius: 374px 374px 20px 20px;
+  z-index: 2;
+}
+
+.arch {
+  position: absolute;
+  top: 382px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 650px;
+  border-radius: 360px 360px 16px 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(201,168,76,0.9);
+  box-shadow:
+    0 30px 70px rgba(20,4,8,0.55),
+    inset 0 0 60px rgba(20,4,8,0.18);
+  z-index: 2;
+  background: #EDE3C8;
+}
+
+.arch .plate {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+  display: block;
+}
+
+/* ── Product fallback (used only when no plate) ───────── */
+.product-wrap {
+  position: absolute;
+  top: 430px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 40px rgba(20,4,7,0.35));
+}
+
+/* ── Price — quiet luxury, flanked by hairlines ───────── */
+.price-badge {
+  position: absolute;
+  bottom: 226px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'CormorantGaramond', 'NotoSans', serif;
+  font-size: 62px;
+  font-weight: 600;
+  color: #F5EDD6;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.price-badge::before,
+.price-badge::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 86px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C);
+  margin: 0 32px 10px 0;
+}
+
+.price-badge::after {
+  background: linear-gradient(90deg, #C9A84C, transparent);
+  margin: 0 0 10px 32px;
+}
+
+/* ── CTA — slim outlined pill ─────────────────────────── */
+.cta-button {
+  position: absolute;
+  bottom: 104px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 66px;
+  height: 90px;
+  background: rgba(20,4,8,0.25);
+  border: 1.5px solid rgba(201,168,76,0.9);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NotoSansDevanagari', 'NotoSans', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #F5EDD6;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* ── Logo (light variant, bottom-right) ───────────────── */
+.logo {
+  position: absolute;
+  bottom: 52px;
+  right: 62px;
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+  <div class="vignette"></div>
+
+  <div class="kicker">रंग परिधान</div>
+  <div class="headline">{{HEADLINE}}</div>
+  <div class="subheadline">{{SUBHEADLINE}}</div>
+
+  <div class="arch-outer"></div>
+  <div class="arch">
+    <img class="plate" src="{{PLATE_SRC}}" alt="" onerror="this.style.display='none'"/>
+  </div>
+
+  <div class="product-wrap">
+    <img class="product-image" src="{{PRODUCT_SRC}}" alt="product" onerror="this.parentElement.style.display='none'"/>
+  </div>
+
+  <div class="price-badge">{{PRICE}}</div>
+
+  <div class="cta-button">{{CTA}}</div>
+
+  <img class="logo" src="{{LOGO_SRC}}" alt="Rang Paridhan"/>
+
+  <div class="frame"></div>
+  <div class="grain"></div>
+</body>
+</html>

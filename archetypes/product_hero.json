@@ -1,0 +1,9 @@
+{
+  "id": "product_hero",
+  "title": "Product Hero",
+  "description": "Single-product showcase: large product cutout, Hindi headline, price badge, CTA, logo.",
+  "platform": "ig_feed_portrait",
+  "dimensions": { "w": 1080, "h": 1350 },
+  "required_layer_ids": ["headline", "subheadline", "price", "cta", "product", "logo"],
+  "slot_convention": "Text layers: {{LAYER_ID}}  |  Image layers: {{LAYER_ID_SRC}}"
+}

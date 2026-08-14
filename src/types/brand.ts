@@ -1,5 +1,5 @@
 /** Role of a palette swatch within the brand identity. */
-export type PaletteRole = "primary" | "secondary" | "accent" | "background" | "text";
+export type PaletteRole = "primary" | "secondary" | "accent" | "background" | "text" | "dark" | "light";
 
 export interface PaletteSwatch {
   name: string;       // e.g. "burgundy"
@@ -17,9 +17,11 @@ export interface BrandFonts {
 }
 
 export interface LogoAssets {
-  svg?: string;   // path relative to brand dir
+  svg?: string;
   png?: string;
-  /** Variant for dark / coloured backgrounds */
+  dark?: string;
+  /** White/light variant for dark backgrounds */
+  light?: string;
   dark_variant?: string;
 }
 
@@ -55,8 +57,15 @@ export interface Product {
   /** Paths to product images (cutouts preferred) */
   images: string[];
   category: string;
-  /** Optional multilingual short descriptions */
   description_ml?: Record<string, string>;
+  /** Customer rating (e.g. 4.9) */
+  rating?: number;
+  /** Total review count */
+  review_count?: number;
+  /** Short claim line for the post (e.g. "Made from Curd · Bilona Method") */
+  key_claim?: string;
+  /** Size/volume string (e.g. "500 ml") */
+  size?: string;
 }
 
 /**
@@ -68,6 +77,7 @@ export interface BrandKit {
   /** Stable slug used in directory names and CLI flags */
   id: string;
   name: string;
+  tagline?: string;
   /** Brand's primary language (BCP-47 tags), e.g. ["hi", "en"] */
   languages: string[];
   /** States/cities the brand sells to; used for festival relevance scoring */
